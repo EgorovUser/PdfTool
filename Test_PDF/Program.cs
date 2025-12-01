@@ -290,9 +290,9 @@ class Program
             result = new Dictionary<string, List<Dictionary<string, string>>>();
 
         string dataSource = string.Empty;
-        /*
+        
         try
-        {*/
+        {
             using (PdfReader reader = new PdfReader(pdfFilePath))
             {
                 for (int i = 1; i <= reader.NumberOfPages; i++)
@@ -779,12 +779,12 @@ class Program
                 //{Path.GetFileNameWithoutExtension(pdfFilePath)}_
                 File.WriteAllText(Path.Combine(Path.GetDirectoryName(mail_Folder_Path), dataSource, $"result.json"), outputJsonContent);
             }
-        /*
+        
         }
         catch (Exception ex)
         {
             File.AppendAllText(logPath, $"Ошибка при чтении файла {Path.GetFileName(pdfFilePath)}: {ex.Message}\n");
             File.Copy(pdfFilePath, "fix/" + Path.GetFileName(pdfFilePath));
-        }*/
+        }
     }
 }
